@@ -64,6 +64,18 @@ if survey_file:
         # Input RKB value
         rkb = st.sidebar.number_input("Enter RKB (ft)", value=0.0, step=0.1)
         
+        #add note to user about headlines
+        st.sidebar.info(
+            "📌 Make sure your Excel file includes the following columns with exact names:\n\n"
+            "- `MD`\n"
+            "- `Inclination`\n"
+            "- `Azimuth`\n"
+            "- `X_Offset_EW`\n"
+            "- `Y_Offset_NS`\n"
+            "- `Well Name`\n\n"
+            "These are case-sensitive and required for correct TVD and trajectory calculation."
+        )
+        
         # Initialize 3D figure
         fig = go.Figure()
 
